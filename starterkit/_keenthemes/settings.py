@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     # Keenthemes Apps
     'dashboards.apps.DashboardsConfig',
     'auth.apps.AuthConfig',
+    'automation.apps.AutomationConfig',
+    'graphene_django',
 ]
 
 MIDDLEWARE = [
@@ -55,6 +57,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = '_keenthemes.urls'
+
+GRAPHENE = {
+    # "SCHEMA": "graphql_tutorial.schema.schema"
+}
 
 TEMPLATES = [
     {
@@ -85,12 +91,16 @@ WSGI_APPLICATION = '_keenthemes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'msv4',
+#         'ENFORCE_SCHEMA': False,
+#         'CLIENT': {
+#             'host': 'mongodb+srv://gonn-user:Sharma%4011@ihrms-free.ysswmv8.mongodb.net/msv4'
+#         }
+#     }
+# }
 
 
 # Password validation

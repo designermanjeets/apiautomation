@@ -18,6 +18,9 @@ from django.urls import include, path
 from django.conf import settings
 from _keenthemes.views import SystemView
 
+from graphene_django.views import GraphQLView
+from automation.schema import schema
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -26,6 +29,11 @@ urlpatterns = [
 
     # Auth urls
     path('', include('auth.urls')),
+    path('simple_upload', SystemView.simple_upload ),
+
+    # Automation urls
+    path('', include('automation.urls')),
+    path("graphql", GraphQLView.as_view(graphiql=True, schema=schema)),
 ]
 
 handler404 = SystemView.as_view(template_name = 'pages/system/not-found.html', status=404)

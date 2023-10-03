@@ -16,10 +16,10 @@ class KTBootstrapDefault:
         Below layout function need to included with the particular HTML layout file.
         """
         # 1) Light sidebar layout (default.html)
-        #KTBootstrapDefault.initLightSidebarLayout(context)
+        KTBootstrapDefault.initLightSidebarLayout(context)
 
         # 2) Dark sidebar layout (default.html)
-        KTBootstrapDefault.initDarkSidebarLayout(context)
+        # KTBootstrapDefault.initDarkSidebarLayout(context)
 
         # 3) Dark header layout (default_header_layout.html)
         #KTBootstrapDefault.initDarkHeaderLayout(context)
@@ -43,6 +43,7 @@ class KTBootstrapDefault:
         KTTheme.addJavascriptFile('js/custom/utilities/modals/create-app.js')
         KTTheme.addJavascriptFile('js/custom/utilities/modals/users-search.js')
         KTTheme.addJavascriptFile('js/custom/utilities/modals/new-target.js')
+        KTTheme.addJavascriptFile('js/custom/msauto.js')
 
         return context
 
@@ -63,13 +64,16 @@ class KTBootstrapDefault:
 
     def initLightSidebarLayout(context):
         KTTheme.addHtmlAttribute('body', 'data-kt-app-layout', 'light-sidebar')
-        KTTheme.addHtmlAttribute('body', 'data-kt-app-header-fixed', 'false')
+        KTTheme.addHtmlAttribute('body', 'data-kt-app-header-fixed', 'true')
+        KTTheme.addHtmlAttribute('body', 'data-kt-app-header-fixed-mobile', 'true')
         KTTheme.addHtmlAttribute('body', 'data-kt-app-sidebar-enabled', 'true')
         KTTheme.addHtmlAttribute('body', 'data-kt-app-sidebar-fixed', 'true')
-        KTTheme.addHtmlAttribute('body', 'data-kt-app-sidebar-hoverable', 'true')
-        KTTheme.addHtmlAttribute('body', 'data-kt-app-sidebar-push-header', 'true')
+        # KTTheme.addHtmlAttribute('body', 'data-kt-app-sidebar-hoverable', 'true')
+        # KTTheme.addHtmlAttribute('body', 'data-kt-app-sidebar-push-header', 'true')
         KTTheme.addHtmlAttribute('body', 'data-kt-app-sidebar-push-toolbar', 'true')
         KTTheme.addHtmlAttribute('body', 'data-kt-app-sidebar-push-footer', 'true')
+        KTTheme.addHtmlAttribute('body', 'data-kt-app-sidebar-stacked', 'true')
+        KTTheme.addHtmlAttribute('body', 'data-kt-app-sidebar-secondary-enabled', 'true')
         KTTheme.addHtmlAttribute('body', 'data-kt-app-toolbar-enabled', 'true')
 
         KTTheme.addHtmlClass('body', 'app-default')
